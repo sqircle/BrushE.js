@@ -1,0 +1,4 @@
+
+BrushE = {}
+
+module.exports = BrushE
