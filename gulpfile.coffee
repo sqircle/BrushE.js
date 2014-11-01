@@ -1,12 +1,13 @@
 'use strict'
-gulp       = require 'gulp'
-gp         = (require 'gulp-load-plugins') lazy: false
-path       = require 'path'
-browserify = require 'browserify'
-coffeeify  = require 'gulp-coffeeify'
-source     = require 'vinyl-source-stream'
+gulp           = require 'gulp'
+gp             = (require 'gulp-load-plugins') lazy: false
+path           = require 'path'
+browserify     = require 'browserify'
+coffeeify      = require 'gulp-coffeeify'
+source         = require 'vinyl-source-stream'
 mochaPhantomJS = require('gulp-mocha-phantomjs')
-concat = require('gulp-concat')
+concat         = require('gulp-concat')
+runSequence    = require('run-sequence')
 
 # Compile 
 gulp.task "coffeeit", ->
@@ -58,9 +59,13 @@ gulp.task "test", ->
   )
 
 # Register Tasks
-gulp.task 'build', ['coffeeit', 'dist:js', 'dist:images', 'dist:css']
-gulp.task 'spec', ['build', 'test']
-gulp.task 'default', ['test']
+gulp.task 'build', ->
+  runSequence(['dist:images', 'dist:css'], 'coffeeit', 'dist:js')
+
+gulp.task 'spec', ->
+  runSequence(['dist:images', 'dist:css'], 'coffeeit', 'dist:js', 'test')
+
+gulp.task 'default', ['spec']
 
 # # Watching You!
 # gulp.watch(['src/**/*.coffee', 'assets/css/**/*.sass'], ['default'])
