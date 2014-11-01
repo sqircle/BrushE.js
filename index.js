@@ -1,1 +1,1 @@
-module.exports = require('./lib/Brushes.js');
+module.exports = require('./lib/BrushE.js');

@@ -19,13 +19,13 @@ gulp.task 'dist:js', ->
   browserify
     entries: ['./index.js']
     extensions: ['.js']
-    standalone: "Brushes"
+    standalone: "BrushE"
   .transform 'debowerify'
   .transform 'uglifyify'
   .bundle()
 
   # Pass desired file name to browserify with vinyl
-  .pipe source 'Brushes.js'
+  .pipe source 'BrushE.js'
 
   # Start piping stream to tasks!
   .pipe gulp.dest 'dist'

@@ -1,14 +1,14 @@
 {
-  "name": "Brushes",
+  "name": "BrushE",
   "version": "0.0.1",
   "description": "A port of the MyPaint brush engine to CoffeeScript/JS",
   "homepage": "https://github.com/ryggrad/ryggrad",
   "keywords": [],
   "author": "K-2052 <k@2052.me>",
-  "main": "dist/Brushes.js",
+  "main": "dist/BrushE.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sqircle/Brushes.js.git"
+    "url": "git://github.com/sqircle/BrushE.js.git"
   },
   "version": "0.0.1",
   "direct": true,

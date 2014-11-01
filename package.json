@@ -1,11 +1,11 @@
 {
-  "name": "Brushes",
+  "name": "BrushE",
   "version": "0.0.1",
   "description": "A port of the MyPaint brush engine to CoffeeScript/JS",
   "main": "index.js",
   "license": "MIT",
-  "homepage": "https://github.com/sqircle/Brushes.js",
-  "repository": "git://github.com/sqircle/Brushes.js.git",
+  "homepage": "https://github.com/sqircle/BrushE.js",
+  "repository": "git://github.com/sqircle/BrushE.js.git",
   "author": {
     "name": "K-2052",
     "site": "http://twitter.com/k_2052"
