@@ -1,0 +1,23 @@
+{
+  "name": "Brushes",
+  "version": "0.0.1",
+  "description": "A port of the MyPaint brush engine to CoffeeScript/JS",
+  "homepage": "https://github.com/ryggrad/ryggrad",
+  "keywords": [],
+  "author": "K-2052 <k@2052.me>",
+  "main": "dist/Brushes.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sqircle/Brushes.js.git"
+  },
+  "version": "0.0.1",
+  "direct": true,
+  "dependencies": {},
+  "devDependencies": {
+    "sinon": "~1.9.1",
+    "chai": "~1.9.1",
+    "chai-jquery": "~1.2.1",
+    "mocha": "~1.18.2",
+    "sinon-chai": "~2.5.0"
+  }
+}
