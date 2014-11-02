@@ -3,7 +3,7 @@ gulp           = require 'gulp'
 gp             = (require 'gulp-load-plugins') lazy: false
 path           = require 'path'
 browserify     = require 'browserify'
-coffeeify      = require 'gulp-coffeeify'
+coffee         = require 'gulp-coffee'
 source         = require 'vinyl-source-stream'
 mochaPhantomJS = require('gulp-mocha-phantomjs')
 concat         = require('gulp-concat')
@@ -12,7 +12,7 @@ runSequence    = require('run-sequence')
 # Compile 
 gulp.task "coffeeit", ->
   gulp.src('src/**/*.coffee')
-    .pipe coffeeify()
+    .pipe coffee(bare: true)
     .pipe gulp.dest('./lib')
 
 # Build JS for distribution/bower
@@ -46,9 +46,9 @@ gulp.task 'dist:images', ->
 
 # Testing
 gulp.task "test", ->
-  gulp.src('spec/**/*.coffee')
+  gulp.src('spec/**/*_spec.coffee')
     .pipe(concat('spec.coffee'))
-    .pipe coffeeify()
+    .pipe coffee(bare: true)
     .pipe gulp.dest('./test/spec')
 
   gulp.src("test/runner.html").pipe mochaPhantomJS(
@@ -63,7 +63,7 @@ gulp.task 'build', ->
   runSequence(['dist:images', 'dist:css'], 'coffeeit', 'dist:js')
 
 gulp.task 'spec', ->
-  runSequence(['dist:images', 'dist:css'], 'coffeeit', 'dist:js', 'test')
+  runSequence('coffeeit', 'dist:js', 'test')
 
 gulp.task 'default', ['spec']
 
