@@ -46,10 +46,13 @@ gulp.task 'dist:images', ->
 
 # Testing
 gulp.task "test", ->
-  gulp.src('spec/**/*_spec.coffee')
-    .pipe(concat('spec.coffee'))
-    .pipe coffee(bare: true)
-    .pipe gulp.dest('./test/spec')
+  browserify
+    entries: ['./spec/spec.coffee']
+    extensions: ['.coffee', '.js']
+  .transform 'coffeeify'
+  .bundle()
+  .pipe source 'spec.js'
+  .pipe gulp.dest 'test/spec'
 
   gulp.src("test/runner.html").pipe mochaPhantomJS(
     reporter: "spec",
