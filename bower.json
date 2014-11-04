@@ -5,19 +5,21 @@
   "homepage": "https://github.com/ryggrad/ryggrad",
   "keywords": [],
   "author": "K-2052 <k@2052.me>",
-  "main": "dist/BrushE.js",
+  "main": "dist/js/BrushE.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/sqircle/BrushE.js.git"
   },
-  "version": "0.0.1",
   "direct": true,
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "~2.0.3"
+  },
   "devDependencies": {
     "sinon": "~1.9.1",
     "chai": "~1.9.1",
     "chai-jquery": "~1.2.1",
     "mocha": "~1.18.2",
-    "sinon-chai": "~2.5.0"
+    "sinon-chai": "~2.5.0",
+    "color": "~2.4.2"
   }
 }
